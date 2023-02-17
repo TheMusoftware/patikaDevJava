@@ -32,8 +32,22 @@ public class Main {
             else return isPrime(num,++divider);
         }
     }
+    static void PrintPattern(int num){
+        System.out.print(num+" ");
+        if(num<0) num+=5;
+        else num-=5;
+
+        PrintPattern(num);
+    //Update Required
+    }
+
+    static int Fib(int n ){
+        if(n==1 || n==2) return 1;
+        return Fib(n-2)+Fib(n-1);
+    }
     public static void main(String[] args) {
         System.out.println(Pow(2,5));
         System.out.println(isPrime(21,2));
+        System.out.println(Fib(6));
     }
 }
