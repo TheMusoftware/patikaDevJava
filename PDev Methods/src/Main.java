@@ -18,7 +18,22 @@ public class Main {
         result*=Pow(x,--e)*x;
         return result;
     }
+    static boolean isPrime(int num , int divider){
+        /*
+        23 29
+        21 27 25
+        -18 19 20 -21 22 23 -24 25 26 -27 28 29 -30
+         */
+        if(num<3) return num==2 ? true : false;
+        if(num%2==0) return false;
+        if(num%divider!= 0 && divider >= num-1 ) return true;
+        else{
+            if(num%divider==0)return false;
+            else return isPrime(num,++divider);
+        }
+    }
     public static void main(String[] args) {
         System.out.println(Pow(2,5));
+        System.out.println(isPrime(21,2));
     }
 }
